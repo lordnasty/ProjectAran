@@ -79,7 +79,7 @@ PlayerSettings:
   hideHomeButton: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   useFlipModelSwapchain: 1
   resizableWindow: 0
@@ -127,7 +127,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0.0.3
+  bundleVersion: 1.0.0.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -152,12 +152,12 @@ PlayerSettings:
     iPhone: com.reuno.corgienginetechdemo
     tvOS: com.reuno.corgienginetechdemo
   buildNumber:
-    Standalone: 3
-    iPhone: 3
+    Standalone: 7
+    iPhone: 7
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 2020101905
-  AndroidMinSdkVersion: 29
+  AndroidBundleVersionCode: 2020101909
+  AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -258,7 +258,7 @@ PlayerSettings:
   androidGamepadSupportLevel: 0
   AndroidMinifyWithR8: 0
   AndroidMinifyRelease: 0
-  AndroidMinifyDebug: 0
+  AndroidMinifyDebug: 1
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   m_BuildTargetIcons:
@@ -749,7 +749,8 @@ PlayerSettings:
     WebGL: 1
     Windows Store Apps: 2
     iPhone: 1
-  il2cppCompilerConfiguration: {}
+  il2cppCompilerConfiguration:
+    Android: 0
   managedStrippingLevel: {}
   incrementalIl2cppBuild:
     iPhone: 0

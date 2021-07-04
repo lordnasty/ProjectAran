@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ButtonAnimatorOneTimeCloser
+  m_Controller: {fileID: 9100000, guid: 97d776a897aed524f9e6839f835523e1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b72ed5e34101a7942b04487c444ebde1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 413584a3746bf5a4399223269114c964, type: 2}
