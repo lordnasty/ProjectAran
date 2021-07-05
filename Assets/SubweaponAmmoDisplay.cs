@@ -20,7 +20,7 @@ public class SubweaponAmmoDisplay : MonoBehaviour
     
     void Start()
     {
-        _weaponAmmo = SubweaponHandler.CurrentWeapon.GetComponent<WeaponAmmo>();
+       // _weaponAmmo = SubweaponHandler.CurrentWeapon.GetComponent<WeaponAmmo>();
         playerGO = GameObject.FindGameObjectWithTag("Player");
         AmmoTextComp = GetComponent<TextMeshProUGUI>();
         SubweaponHandler = playerGO.GetComponent<CharacterHandleSecondaryWeapon>();

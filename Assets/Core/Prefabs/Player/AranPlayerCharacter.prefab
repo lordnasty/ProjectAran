@@ -19676,6 +19676,7 @@ GameObject:
   - component: {fileID: 3116482420574208735}
   - component: {fileID: 143801700633172642}
   - component: {fileID: 4238367623718149658}
+  - component: {fileID: 400492623478990727}
   m_Layer: 9
   m_Name: AranPlayerCharacter
   m_TagString: Player
@@ -19840,7 +19841,7 @@ MonoBehaviour:
   CrouchedRaycastLengthMultiplier: 1
   CastRaysOnBothSides: 0
   DistanceToTheGroundRayMaximumLength: 100
-  PerformSafetyBoxcast: 0
+  PerformSafetyBoxcast: 1
   StickToSlopes: 1
   StickyRaycastLength: 1
   StickToSlopesOffsetY: 0.8
@@ -20253,7 +20254,7 @@ MonoBehaviour:
   ContinuousPress: 0
   GettingHitInterruptsAttack: 0
   CanShootFromLadders: 1
-  FaceWeaponDirection: 0
+  FaceWeaponDirection: 1
   InvertHorizontalAimWhenWallclinging: 0
   BufferInput: 0
   NewInputExtendsBuffer: 0
@@ -20322,7 +20323,7 @@ MonoBehaviour:
   ContinuousPress: 0
   GettingHitInterruptsAttack: 0
   CanShootFromLadders: 1
-  FaceWeaponDirection: 0
+  FaceWeaponDirection: 1
   InvertHorizontalAimWhenWallclinging: 0
   BufferInput: 0
   NewInputExtendsBuffer: 0
@@ -20378,6 +20379,23 @@ MonoBehaviour:
   ResetAngleInTheAir: 1
   RotateWeapon: 1
   RaycastLength: 1
+--- !u!114 &400492623478990727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633440199758918902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5ed82f220055de419aad7e7e1832197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AbilityStartFeedbacks: {fileID: 0}
+  AbilityStopFeedbacks: {fileID: 0}
+  AbilityPermitted: 1
+  BlockingMovementStates: 
+  BlockingConditionStates: 
 --- !u!1 &2689386507821044998
 GameObject:
   m_ObjectHideFlags: 0
@@ -66757,12 +66775,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b575174974cb6f641962640d3d25fec0, type: 3}
---- !u!137 &1707931728337436587 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
-    type: 3}
-  m_PrefabInstance: {fileID: 21596399378290855}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3750068036975645452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5456582856578692181, guid: b575174974cb6f641962640d3d25fec0,
@@ -66778,6 +66790,12 @@ Animator:
 --- !u!4 &4987187935587038141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b575174974cb6f641962640d3d25fec0,
+    type: 3}
+  m_PrefabInstance: {fileID: 21596399378290855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &1707931728337436587 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
     type: 3}
   m_PrefabInstance: {fileID: 21596399378290855}
   m_PrefabAsset: {fileID: 0}
