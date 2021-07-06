@@ -45,6 +45,11 @@ namespace MoreMountains.Tools
 		protected string _lastPooledObjectName;
 		protected int _currentIndex=0;
 
+		public int GetCurrentIndex()
+		{
+			return _currentIndex;
+		}
+
 		/// <summary>
 		/// Determines the name of the object pool.
 		/// </summary>

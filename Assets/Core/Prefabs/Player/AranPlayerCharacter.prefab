@@ -19677,6 +19677,7 @@ GameObject:
   - component: {fileID: 143801700633172642}
   - component: {fileID: 4238367623718149658}
   - component: {fileID: 400492623478990727}
+  - component: {fileID: 653893992357642087}
   m_Layer: 9
   m_Name: AranPlayerCharacter
   m_TagString: Player
@@ -19943,9 +19944,9 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   NumberOfJumps: 3
-  JumpHeight: 3.025
+  JumpHeight: 3.2
   JumpRestrictions: 2
-  ResetCameraOffsetOnJump: 0
+  ResetCameraOffsetOnJump: 1
   CanJumpDownOneWayPlatforms: 1
   JumpIsProportionalToThePressTime: 1
   JumpMinimumAirTime: 0.1
@@ -20095,6 +20096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 0
+  CurrentStatus: 0
   TemporaryInvulnerable: 0
   InitialHealth: 99
   MaximumHealth: 99
@@ -20244,7 +20246,7 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  InitialWeapon: {fileID: 3046757699214114033, guid: 0335445fc5a53c24591a3d774eaff3d3,
+  InitialWeapon: {fileID: 3046757699214114033, guid: c9165421b0f954d4f85ff584c76e9329,
     type: 3}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 2228794958593352521}
@@ -20396,6 +20398,20 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
+--- !u!114 &653893992357642087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633440199758918902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef860dc386561748996085bacc868ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BeamAmmo: {fileID: 0}
+  CurrentAmmoType: 0
 --- !u!1 &2689386507821044998
 GameObject:
   m_ObjectHideFlags: 0
@@ -61189,6 +61205,7 @@ MonoBehaviour:
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
+  DamageTypeCaused: 0
   DamageTakenEveryTime: 0
   DamageTakenDamageable: 0
   DamageTakenNonDamageable: 0
@@ -66775,6 +66792,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b575174974cb6f641962640d3d25fec0, type: 3}
+--- !u!137 &1707931728337436587 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
+    type: 3}
+  m_PrefabInstance: {fileID: 21596399378290855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3750068036975645452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5456582856578692181, guid: b575174974cb6f641962640d3d25fec0,
@@ -66790,12 +66813,6 @@ Animator:
 --- !u!4 &4987187935587038141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b575174974cb6f641962640d3d25fec0,
-    type: 3}
-  m_PrefabInstance: {fileID: 21596399378290855}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &1707931728337436587 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
     type: 3}
   m_PrefabInstance: {fileID: 21596399378290855}
   m_PrefabAsset: {fileID: 0}

@@ -197,7 +197,7 @@ namespace MoreMountains.CorgiEngine
 
 			if (_health != null)
 			{
-				_health.Damage(DamagePerStomp, corgiController.gameObject, InvincibilityDuration, InvincibilityDuration, Vector3.down);
+				_health.Damage(DamagePerStomp, corgiController.gameObject, InvincibilityDuration, InvincibilityDuration, Vector3.down,EDamageType.Standard);
 			}
 
 			// if what's colliding with us has a CharacterJump component, we reset its JumpButtonReleased flag so that the knockback effect is applied correctly.

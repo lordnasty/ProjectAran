@@ -146,7 +146,7 @@ namespace MoreMountains.CorgiEngine
             }
             if (ApplyDamageWhenCrushed)
             {
-                _health.Damage(DamageTakenWhenCrushed, this.gameObject, DamageTakenFlickerDuration, DamageTakenInvincibilityDuration, Vector3.up);
+                _health.Damage(DamageTakenWhenCrushed, this.gameObject, DamageTakenFlickerDuration, DamageTakenInvincibilityDuration, Vector3.up,EDamageType.Standard);
             }
             if (!_startFeedbackIsPlaying)
             {

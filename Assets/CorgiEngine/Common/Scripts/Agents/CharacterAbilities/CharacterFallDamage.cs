@@ -118,7 +118,7 @@ namespace MoreMountains.CorgiEngine
             {
                 PlayAbilityStartFeedbacks();
             }
-            _health.Damage(damageToApply, this.gameObject, 0.2f, 0.2f, Vector3.up);
+            _health.Damage(damageToApply, this.gameObject, 0.2f, 0.2f, Vector3.up,EDamageType.Standard);
             _damageThisFrame = true;
         }
         

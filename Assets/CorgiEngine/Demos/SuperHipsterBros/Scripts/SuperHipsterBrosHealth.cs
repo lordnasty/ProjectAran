@@ -25,7 +25,7 @@ namespace MoreMountains.CorgiEngine
 		/// </summary>
 		/// <param name="damage">The damage applied.</param>
 		/// <param name="instigator">The damage instigator.</param>
-		public override void Damage(int damage, GameObject instigator, float flickerDuration, float invincibilityDuration, Vector3 damageDirection)
+		public override void Damage(int damage, GameObject instigator, float flickerDuration, float invincibilityDuration, Vector3 damageDirection, EDamageType damageType)
 	    {
 	        if (transform.localScale.y==_initialScale.y)
 	        {

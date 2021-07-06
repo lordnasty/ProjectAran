@@ -5,6 +5,15 @@ using System.Collections.Generic;
 using MoreMountains.Feedbacks;
 using UnityEngine.Serialization;
 
+public enum EDamageType
+{
+	Standard,
+	Ice,
+	Fire,
+	Electric,
+	Acid
+}
+
 namespace MoreMountains.CorgiEngine
 {	
 	/// <summary>
@@ -43,6 +52,9 @@ namespace MoreMountains.CorgiEngine
 		/// The duration of the invincibility frames after the hit (in seconds)
 		[Tooltip("The duration of the invincibility frames after the hit (in seconds)")]
 		public float InvincibilityDuration = 0.5f;
+		///The type of damage to apply (ie Freeze, Burn, Stun or Poison)
+		[Tooltip("The type of damage to apply to the Target (ie Freeze, Burn, Stun or Poison")]
+		public EDamageType DamageTypeCaused = EDamageType.Standard;
 
 		[Header("Damage Taken")]
 		[MMInformation("After having applied the damage to whatever it collided with, you can have this object hurt itself. A bullet will explode after hitting a wall for example. Here you can define how much damage it'll take every time it hits something, or only when hitting something that's damageable, or non damageable. Note that this object will need a Health component too for this to be useful.",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
@@ -278,7 +290,7 @@ namespace MoreMountains.CorgiEngine
             }
 
             // we apply the damage to the thing we've collided with
-			_colliderHealth.Damage(DamageCaused, gameObject,InvincibilityDuration,InvincibilityDuration, _damageDirection);
+			_colliderHealth.Damage(DamageCaused, gameObject,InvincibilityDuration,InvincibilityDuration, _damageDirection,DamageTypeCaused);
 
 			if (_colliderHealth.CurrentHealth <= 0)
 			{
@@ -370,7 +382,7 @@ namespace MoreMountains.CorgiEngine
 	    	if (_health != null)
 	    	{
                 _damageDirection = Vector3.up;
-                _health.Damage(damage,gameObject,0f,DamageTakenInvincibilityDuration, _damageDirection);
+                _health.Damage(damage,gameObject,0f,DamageTakenInvincibilityDuration, _damageDirection,DamageTypeCaused);
 	    	}	
 
 	        ApplyDamageTakenKnockback();

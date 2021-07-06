@@ -3,6 +3,14 @@ using System.Collections;
 using MoreMountains.Tools;
 using MoreMountains.Feedbacks;
 
+public enum ECurrentStatus
+{
+    Fine,
+    Frozen,
+    OnFire,
+    Burning,
+    Stunned
+}
 namespace MoreMountains.CorgiEngine
 {
     /// <summary>
@@ -15,6 +23,10 @@ namespace MoreMountains.CorgiEngine
         /// the current health of the character
         [MMReadOnly] [Tooltip("the current health of the character")]
         public int CurrentHealth;
+
+        /// The Current status of the character
+        [MMReadOnly] [Tooltip("The current status of the character")]
+        public ECurrentStatus CurrentStatus = ECurrentStatus.Fine;
 
         /// If this is true, this object can't take damage at the moment
         [MMReadOnly] [Tooltip("If this is true, this object can't take damage at the moment")]
@@ -251,7 +263,7 @@ namespace MoreMountains.CorgiEngine
         /// <param name="flickerDuration">The time (in seconds) the object should flicker after taking the damage.</param>
         /// <param name="invincibilityDuration">The duration of the short invincibility following the hit.</param>
         public virtual void Damage(int damage, GameObject instigator, float flickerDuration,
-            float invincibilityDuration, Vector3 damageDirection)
+            float invincibilityDuration, Vector3 damageDirection, EDamageType damageType)
         {
             if (damage <= 0)
             {
@@ -279,6 +291,11 @@ namespace MoreMountains.CorgiEngine
             LastDamage = damage;
             LastDamageDirection = damageDirection;
             OnHit?.Invoke();
+
+            if (damageType == EDamageType.Ice)
+            {
+                StartCoroutine(FreezeCharacter());
+            }
 
             if (CurrentHealth < 0)
             {
@@ -609,5 +626,19 @@ namespace MoreMountains.CorgiEngine
         {
             CancelInvoke();
         }
+        
+        IEnumerator FreezeCharacter()
+        {
+            // if we have a character, we want to change its state
+            if (_character != null)
+            {
+                // we set its dead state to true
+                _character.ConditionState.ChangeState(CharacterStates.CharacterConditions.Frozen);
+                _character.Reset();
+            }
+            yield return new WaitForSeconds(5.0f);
+        }
     }
+    
+   
 }

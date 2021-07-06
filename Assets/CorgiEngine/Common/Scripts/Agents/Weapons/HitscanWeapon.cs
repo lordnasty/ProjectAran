@@ -198,7 +198,7 @@ namespace MoreMountains.CorgiEngine
             {
                 // hit damageable
                 _damageDirection = (_hitObject.transform.position - this.transform.position).normalized;
-                _health.Damage(DamageCaused, this.gameObject, DamageCausedInvincibilityDuration, DamageCausedInvincibilityDuration, _damageDirection);
+                _health.Damage(DamageCaused, this.gameObject, DamageCausedInvincibilityDuration, DamageCausedInvincibilityDuration, _damageDirection,EDamageType.Standard);
                 if (_health.CurrentHealth <= 0)
                 {
                     WeaponKill();
