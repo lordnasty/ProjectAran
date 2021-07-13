@@ -124,6 +124,7 @@ namespace MoreMountains.CorgiEngine
         public MMInput.IMButton SwitchCharacterButton { get; protected set; }
         /// the switch weapon button
         public MMInput.IMButton SwitchWeaponButton { get; protected set; }
+        public MMInput.IMButton SwitchPrimaryWeaponButton { get; protected set; }
         /// the time control button
         public MMInput.IMButton TimeControlButton { get; protected set; }
         /// the shoot axis, used as a button (non analogic)
@@ -144,6 +145,11 @@ namespace MoreMountains.CorgiEngine
 		protected string _axisSecondaryVertical;
         protected string _axisShoot;
         protected string _axisShootSecondary;
+
+        // public InputManager(MMInput.IMButton switchPrimaryWeaponButton)
+        // {
+	       //  SwitchPrimaryWeaponButton = switchPrimaryWeaponButton;
+        // }
 
         /// <summary>
         /// On Start we look for what mode to use, and initialize our axis and buttons
@@ -212,6 +218,7 @@ namespace MoreMountains.CorgiEngine
             ButtonList.Add(SecondaryShootButton = new MMInput.IMButton(PlayerID, "SecondaryShoot", SecondaryShootButtonDown, SecondaryShootButtonPressed, SecondaryShootButtonUp));
             ButtonList.Add(ReloadButton = new MMInput.IMButton (PlayerID, "Reload", ReloadButtonDown, ReloadButtonPressed, ReloadButtonUp));
 			ButtonList.Add(SwitchWeaponButton = new MMInput.IMButton (PlayerID, "SwitchWeapon", SwitchWeaponButtonDown, SwitchWeaponButtonPressed, SwitchWeaponButtonUp));
+			ButtonList.Add(SwitchPrimaryWeaponButton = new MMInput.IMButton(PlayerID, "SwitchPrimary", SwitchPrimaryWeaponButtonDown,SwitchPrimaryWeaponButtonPressed,SwitchPrimaryWeaponButtonUp));
 			ButtonList.Add(PauseButton = new MMInput.IMButton (PlayerID, "Pause", PauseButtonDown, PauseButtonPressed, PauseButtonUp));
             ButtonList.Add(PushButton = new MMInput.IMButton(PlayerID, "Push", PushButtonDown, PushButtonPressed, PushButtonUp));
             ButtonList.Add(SwitchCharacterButton = new MMInput.IMButton(PlayerID, "SwitchCharacter", SwitchCharacterButtonDown, SwitchCharacterButtonPressed, SwitchCharacterButtonUp));
@@ -518,6 +525,10 @@ namespace MoreMountains.CorgiEngine
         public virtual void SwitchWeaponButtonDown()        { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
         public virtual void SwitchWeaponButtonPressed()     { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
         public virtual void SwitchWeaponButtonUp()          { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+        
+        public virtual void SwitchPrimaryWeaponButtonDown()  { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
+        public virtual void SwitchPrimaryWeaponButtonPressed()     { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
+        public virtual void SwitchPrimaryWeaponButtonUp()          { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
 
         public virtual void SwitchCharacterButtonDown()     { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
         public virtual void SwitchCharacterButtonPressed()  { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }

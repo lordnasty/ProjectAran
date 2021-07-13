@@ -35,6 +35,10 @@ namespace MoreMountains.CorgiEngine
 		/// the layers that will be damaged by this object
 		[Tooltip("the layers that will be damaged by this object")]
 		public LayerMask TargetLayerMask;
+		
+		/// the layers that will not be damaged but will destroy this object
+		[Tooltip("the layers that will not be damaged but will destroy this object")]
+		public LayerMask CollideOnlyLayerMask;
 
 		[Header("Damage Caused")]
 		/// The amount of health to remove from the player's health
@@ -242,12 +246,20 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
+			
+			//if what we're colliding with is part of the non damage collide layers
+			if (MMLayers.LayerInLayerMask(collider.gameObject.layer, CollideOnlyLayerMask))
+			{
+				OnCollideWithNonDamageable();
+			}
 
 			// if what we're colliding with isn't part of the target layers, we do nothing and exit
 			if (!MMLayers.LayerInLayerMask(collider.gameObject.layer,TargetLayerMask))
 			{
 				return;
 			}
+			
+			
 
 			_collidingCollider = collider;
 			_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();

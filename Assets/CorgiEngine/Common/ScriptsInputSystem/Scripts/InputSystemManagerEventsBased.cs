@@ -29,6 +29,7 @@ namespace MoreMountains.CorgiEngine
         public void OnReload(InputValue value) { BindButton(value, ReloadButton); }
         public void OnPause(InputValue value) { BindButton(value, PauseButton); }
         public void OnSwitchWeapon(InputValue value) { BindButton(value, SwitchWeaponButton); }
+        public void OnPrimaryWeaponButton(InputValue value) { BindButton(value, SwitchPrimaryWeaponButton); }
         public void OnSwitchCharacter(InputValue value) { BindButton(value, SwitchCharacterButton); }
         public void OnTimeControl(InputValue value) { BindButton(value, TimeControlButton); }
         public void OnSwim(InputValue value) { BindButton(value, SwimButton); }

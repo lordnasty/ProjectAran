@@ -4,6 +4,7 @@ using MoreMountains.Tools;
 using System.Collections.Generic;
 using System;
 
+
 namespace MoreMountains.CorgiEngine
 {	
 	[SelectionBase]
@@ -200,6 +201,11 @@ namespace MoreMountains.CorgiEngine
 		{		
 			Initialization();
 		}
+
+        public CharacterAbility[] GetCharacterAbilities()
+        {
+	        return _characterAbilities;
+        }
 
 		/// <summary>
 		/// Gets and stores input manager, camera and components

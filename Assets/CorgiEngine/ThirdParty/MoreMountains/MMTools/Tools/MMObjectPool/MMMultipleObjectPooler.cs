@@ -16,12 +16,13 @@ namespace MoreMountains.Tools
 		public int PoolSize;
 		public bool PoolCanExpand = true;
 		public bool Enabled = true;
+
 	}
 
 	/// <summary>
 	/// The various methods you can pull objects from the pool with
 	/// </summary>
-	public enum MMPoolingMethods { OriginalOrder, OriginalOrderSequential, RandomBetweenObjects, RandomPoolSizeBased }
+	public enum MMPoolingMethods { OriginalOrder, OriginalOrderSequential, RandomBetweenObjects, RandomPoolSizeBased, FindByType }
 
     /// <summary>
     /// This class allows you to have a pool of various objects to pool from.
@@ -44,7 +45,18 @@ namespace MoreMountains.Tools
 		protected List<MMMultipleObjectPoolerObject> _randomizedPool;
 		protected string _lastPooledObjectName;
 		protected int _currentIndex=0;
+		protected int _currentPoolIndex;
+		
 
+		public List<GameObject> GetPooledGameObjects()
+		{
+			return _pooledGameObjects;
+		}
+
+		public MMMultipleObjectPoolerObject GetPoolByIndex()
+		{
+			return Pool[_currentPoolIndex];
+		}
 		public int GetCurrentIndex()
 		{
 			return _currentIndex;
@@ -132,6 +144,8 @@ namespace MoreMountains.Tools
 						}
 					}				
 					break;
+				
+				
 				default:
 					int k = 0;
 					// for each type of object specified in the inspector
@@ -212,6 +226,22 @@ namespace MoreMountains.Tools
 				_lastPooledObjectName="";
 			}
 			return pooledGameObject;
+		}
+
+		public bool ReachedPoolSizeLimit()
+		{
+			MMMultipleObjectPoolerObject searchedObject = GetPoolObject(_pooledGameObjects[_currentIndex].gameObject);
+			if (_currentIndex >= searchedObject.PoolSize)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		public MMMultipleObjectPoolerObject GetCurrentPoolerObject()
+		{
+			MMMultipleObjectPoolerObject searchedObject = GetPoolObject(_pooledGameObjects[_currentIndex].gameObject);
+			return searchedObject;
 		}
 
 		/// <summary>
@@ -537,6 +567,11 @@ namespace MoreMountains.Tools
 		public virtual void ResetCurrentIndex()
 		{
 			_currentIndex=0;
+		}
+
+		public void UpdateCurrentIndex(int NewIndex)
+		{
+			_currentIndex = NewIndex;
 		}
 	}
 }

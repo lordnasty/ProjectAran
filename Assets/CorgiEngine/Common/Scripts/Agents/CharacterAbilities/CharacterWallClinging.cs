@@ -42,6 +42,12 @@ namespace MoreMountains.CorgiEngine
         protected const string _wallClingingAnimationParameterName = "WallClinging";
         protected int _wallClingingAnimationParameter;
 
+        protected override void Start()
+        {
+	        base.Start();
+	        AbilityName = "Power Grip";
+        }
+
         /// <summary>
         /// Checks the input to see if we should enter the WallClinging state
         /// </summary>

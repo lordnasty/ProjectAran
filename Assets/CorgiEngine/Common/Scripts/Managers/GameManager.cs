@@ -1,9 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using System.Collections.Generic;
 using MoreMountains.InventoryEngine;
 using MoreMountains.Feedbacks;
+
 
 namespace MoreMountains.CorgiEngine
 {
@@ -92,6 +94,8 @@ namespace MoreMountains.CorgiEngine
         }
     }
 
+	
+
 	/// <summary>
 	/// A type of event used to signal changes to the current score
 	/// </summary>
@@ -138,7 +142,7 @@ namespace MoreMountains.CorgiEngine
 			PointOfEntryIndex = pointOfEntryIndex;
 		}
 	}
-
+	
 	/// <summary>
 	/// The game manager is a persistent singleton that handles points and time
 	/// </summary>
@@ -191,6 +195,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			base.Awake ();
 			PointsOfEntry = new List<PointsOfEntryStorage> ();
+			//Console.Initialize();
 		}
 
 	    /// <summary>

@@ -18,6 +18,8 @@ namespace MoreMountains.CorgiEngine
 		/// the feedbacks to play when the ability stops
 		[Tooltip("the feedbacks to play when the ability stops")]
 		public MMFeedbacks AbilityStopFeedbacks;
+
+		public string AbilityName;
         
         [Header("Permissions")]
 
@@ -31,6 +33,7 @@ namespace MoreMountains.CorgiEngine
 		[Tooltip("an array containing all the blocking condition states. If the Character is in one of these states and tries to trigger this ability, it won't be permitted. Useful to prevent this ability from being used while dead, for example.")]
 		public CharacterStates.CharacterConditions[] BlockingConditionStates;
 
+		
 		public virtual bool AbilityAuthorized
 		{
 			get
@@ -56,6 +59,18 @@ namespace MoreMountains.CorgiEngine
 				return AbilityPermitted;
 			}
 		}
+
+		public void ToggleAbilityPermission()
+		{
+			if (!AbilityPermitted)
+			{
+				AbilityPermitted = true;
+			}
+			else
+			{
+				AbilityPermitted = false;
+			}
+		}
 		
 		/// true if the ability has already been initialized
 		public bool AbilityInitialized { get { return _abilityInitialized; } }
@@ -76,6 +91,7 @@ namespace MoreMountains.CorgiEngine
 		protected float _verticalInput;
 		protected float _horizontalInput;
         protected bool _startFeedbackIsPlaying = false;
+        
 
 		/// This method is only used to display a helpbox text at the beginning of the ability's inspector
 		public virtual string HelpBoxText() { return ""; }
@@ -86,6 +102,7 @@ namespace MoreMountains.CorgiEngine
 		protected virtual void Start () 
 		{
 			Initialization();
+			
 		}
 
 		/// <summary>

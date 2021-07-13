@@ -4916,6 +4916,7 @@ MonoBehaviour:
   DirectionCanBeChangedBySpawner: 1
   FlipValue: {x: -1, y: 1, z: 1}
   ProjectileIsFacingRight: 1
+  IgnoredLayerMasks: []
   InitialInvulnerabilityDuration: 0.5
   DamageOwner: 0
   SpawnSecurityCheck: 0
@@ -4938,10 +4939,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4416
   DamageCaused: 30
-  DamageCausedKnockbackType: 1
+  DamageCausedKnockbackType: 2
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
+  DamageTypeCaused: 0
   DamageTakenEveryTime: 10
   DamageTakenDamageable: 5
   DamageTakenNonDamageable: 10
@@ -4949,7 +4951,7 @@ MonoBehaviour:
   DamageTakenKnockbackDirection: 0
   DamageTakenKnockbackForce: {x: 0, y: 0}
   DamageTakenInvincibilityDuration: 0
-  HitDamageableFeedback: {fileID: 0}
+  HitDamageableFeedback: {fileID: 8594053497575917661}
   HitNonDamageableFeedback: {fileID: 0}
   FreezeFramesOnHitDuration: 0
   Owner: {fileID: 0}
@@ -4966,6 +4968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 0
+  CurrentStatus: 0
   TemporaryInvulnerable: 0
   InitialHealth: 10
   MaximumHealth: 10
@@ -4974,7 +4977,7 @@ MonoBehaviour:
   FlickerSpriteOnHit: 1
   FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
   ImmuneToKnockback: 0
-  DeathFeedbacks: {fileID: 0}
+  DeathFeedbacks: {fileID: 5118854549475139778}
   DestroyOnDeath: 1
   DelayBeforeDestruction: 0
   CollisionsOffOnDeath: 1
@@ -5096,7 +5099,8 @@ MonoBehaviour:
   DebugActive: 0
   Mode: 1
   CachedRecycle: 1
-  ParticlesPrefab: {fileID: 19800000, guid: 5c89a1c1072915d4fb9356e161ede976, type: 3}
+  ParticlesPrefab: {fileID: 198074104398807022, guid: f1aeeba2f9003904da5c0a24ba150198,
+    type: 3}
   RandomParticlePrefabs: []
   PositionMode: 0
   InstantiateParticlesPosition: {fileID: 0}

@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 114532489586338296}
   - component: {fileID: 114287042290906654}
   m_Layer: 0
-  m_Name: MinimalRocketLauncherWithAmmo 1
+  m_Name: MinimalRocketLauncherWithAmmo_Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5031,7 +5031,7 @@ MonoBehaviour:
   Spread: {x: 0, y: 0, z: 0}
   RotateWeaponOnSpread: 0
   RandomSpread: 1
-  SpawnPosition: {x: -70.889885, y: -0.43066493, z: 0}
+  SpawnPosition: {x: 97.44239, y: -2.9097843, z: -5}
 --- !u!114 &114000010682185684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,16 +5045,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AimControl: 1
-  RotationMode: 0
+  RotationMode: 2
   WeaponRotationSpeed: 5
-  MinimumAngle: -180
-  MaximumAngle: 180
+  MinimumAngle: -90
+  MaximumAngle: 90
   IgnoreSlopeRotation: 0
-  Reticle: {fileID: 0}
-  DisplayReticle: 1
-  ReticleDistance: 0
+  Reticle: {fileID: 1000010525066036, guid: fdff91f9c641e4bc4ae800f161c07e1f, type: 3}
+  DisplayReticle: 0
+  ReticleDistance: 8
   ReticleAtMousePosition: 0
-  RotateReticle: 0
+  RotateReticle: 1
   ReplaceMousePointer: 0
   DisableReticleOnDeath: 1
 --- !u!114 &114532489586338296
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   AmmoID: AranRocket
   AmmoInventoryName: MainInventory
   MaxAmmo: 100
-  ShouldLoadOnStart: 1
+  ShouldLoadOnStart: 0
   CurrentAmmoAvailable: 0
 --- !u!114 &114287042290906654
 MonoBehaviour:
@@ -5086,12 +5086,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b7277539b95c0d45895792ecc99ce66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MutualizeWaitingPools: 1
+  MutualizeWaitingPools: 0
   NestWaitingPool: 1
-  GameObjectToPool: {fileID: 176298243997670867, guid: 9d51df669db569848a2342bd7c43a299,
+  GameObjectToPool: {fileID: 8332430216749021660, guid: 3be0ff69cb467804cbc0ecf3216dcf7b,
     type: 3}
   PoolSize: 20
-  PoolCanExpand: 1
+  PoolCanExpand: 0
 --- !u!1 &1000014227990102
 GameObject:
   m_ObjectHideFlags: 0
@@ -10271,7 +10271,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: d8ea448bae39d4146b98a9953a270f1b, type: 3}
+  Sfx: {fileID: 8300000, guid: a15d1a5d45c148f40b5b376890036690, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
@@ -10477,7 +10477,7 @@ MonoBehaviour:
     Quantized: 0
     TargetBPM: 120
   DebugActive: 0
-  Sfx: {fileID: 8300000, guid: 7e992ab4aafc96e47b6bb8cacb5bc9e5, type: 3}
+  Sfx: {fileID: 8300000, guid: 6df56a34e631ee5479f05488cf04df74, type: 3}
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0

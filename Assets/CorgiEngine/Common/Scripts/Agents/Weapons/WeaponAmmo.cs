@@ -51,7 +51,11 @@ namespace MoreMountains.CorgiEngine
 
 		protected virtual void RefreshCurrentAmmoAvailable()
 		{
-			CurrentAmmoAvailable = AmmoInventory.GetQuantity (AmmoID);
+			if (AmmoInventory)
+			{
+				CurrentAmmoAvailable = AmmoInventory.GetQuantity (AmmoID);	
+			}
+			
 		}
 
 		public bool EnoughAmmoToFire()

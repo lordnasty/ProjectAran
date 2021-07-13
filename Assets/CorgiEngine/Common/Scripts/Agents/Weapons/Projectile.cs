@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using MoreMountains.Tools;
 
 namespace MoreMountains.CorgiEngine
@@ -33,6 +34,8 @@ namespace MoreMountains.CorgiEngine
 		/// determines whether or not the projectile is facing right
 		[Tooltip("determines whether or not the projectile is facing right")]
 		public bool ProjectileIsFacingRight = true;
+
+		public List<LayerMask> IgnoredLayerMasks;
 
 		[Header("Spawn")]
 		[MMInformation("Here you can define an initial delay (in seconds) during which this object won't take or cause damage. This delay starts when the object gets enabled. You can also define whether the projectiles should damage their owner (think rockets and the likes) or not",MoreMountains.Tools.MMInformationAttribute.InformationType.Info,false)]
@@ -132,6 +135,11 @@ namespace MoreMountains.CorgiEngine
                 return;
             }
 
+            foreach (var t in IgnoredLayerMasks)
+            {
+	            Physics2D.IgnoreLayerCollision(t.value,this.gameObject.layer,true);
+            }
+			
             _hit2D = Physics2D.BoxCast(this.transform.position, _collider.bounds.size, this.transform.eulerAngles.z, Vector3.forward, 1f, SpawnSecurityCheckLayerMask);
             if (_hit2D)
             {

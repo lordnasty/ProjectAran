@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 582982426577638891}
   - component: {fileID: 582982425329332337}
   - component: {fileID: 582982380090665401}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: MinimalMachineGunBullet
   m_TagString: Untagged
   m_Icon: {fileID: 1177953632, guid: 0000000000000000d000000000000000, type: 0}
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.22, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -113,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!50 &663027209119174563
 Rigidbody2D:
@@ -157,6 +157,7 @@ MonoBehaviour:
   DirectionCanBeChangedBySpawner: 1
   FlipValue: {x: -1, y: 1, z: 1}
   ProjectileIsFacingRight: 1
+  IgnoredLayerMasks: []
   InitialInvulnerabilityDuration: 0
   DamageOwner: 0
   SpawnSecurityCheck: 0
@@ -177,12 +178,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 270592
   DamageCaused: 10
   DamageCausedKnockbackType: 0
   DamageCausedKnockbackDirection: 0
   DamageCausedKnockbackForce: {x: 10, y: 2}
   InvincibilityDuration: 0.5
+  DamageTypeCaused: 0
   DamageTakenEveryTime: 10
   DamageTakenDamageable: 5
   DamageTakenNonDamageable: 10
@@ -207,6 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth: 0
+  CurrentStatus: 0
   TemporaryInvulnerable: 0
   InitialHealth: 10
   MaximumHealth: 10

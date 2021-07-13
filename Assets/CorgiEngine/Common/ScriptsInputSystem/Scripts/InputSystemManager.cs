@@ -52,6 +52,7 @@ namespace MoreMountains.CorgiEngine
             InputActions.PlayerControls.Reload.performed += context => { BindButton(context, ReloadButton); };
             InputActions.PlayerControls.Pause.performed += context => { BindButton(context, PauseButton); };
             InputActions.PlayerControls.SwitchWeapon.performed += context => { BindButton(context, SwitchWeaponButton); };
+            InputActions.PlayerControls.SwitchPrimaryWeapon.performed += context => { BindButton(context, SwitchPrimaryWeaponButton); };
             InputActions.PlayerControls.SwitchCharacter.performed += context => { BindButton(context, SwitchCharacterButton); };
             InputActions.PlayerControls.TimeControl.performed += context => { BindButton(context, TimeControlButton); };
 
@@ -110,7 +111,6 @@ namespace MoreMountains.CorgiEngine
                 }
             }
         }
-
         /// <summary>
         /// On enable we enable our input actions
         /// </summary>

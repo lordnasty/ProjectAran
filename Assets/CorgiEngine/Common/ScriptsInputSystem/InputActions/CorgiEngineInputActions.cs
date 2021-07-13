@@ -179,6 +179,14 @@ namespace MoreMountains.CorgiEngine
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchPrimaryWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""9dab76ee-3a42-4cd2-94c3-2c76fa38317c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -643,6 +651,17 @@ namespace MoreMountains.CorgiEngine
                     ""action"": ""Push"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a65a24d0-0588-4adf-9ae9-332dbbbd0f04"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SwitchPrimaryWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -694,6 +713,7 @@ namespace MoreMountains.CorgiEngine
             m_PlayerControls_SwitchWeapon = m_PlayerControls.FindAction("SwitchWeapon", throwIfNotFound: true);
             m_PlayerControls_SwitchCharacter = m_PlayerControls.FindAction("SwitchCharacter", throwIfNotFound: true);
             m_PlayerControls_TimeControl = m_PlayerControls.FindAction("TimeControl", throwIfNotFound: true);
+            m_PlayerControls_SwitchPrimaryWeapon = m_PlayerControls.FindAction("SwitchPrimaryWeapon", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -763,6 +783,7 @@ namespace MoreMountains.CorgiEngine
         private readonly InputAction m_PlayerControls_SwitchWeapon;
         private readonly InputAction m_PlayerControls_SwitchCharacter;
         private readonly InputAction m_PlayerControls_TimeControl;
+        private readonly InputAction m_PlayerControls_SwitchPrimaryWeapon;
         public struct PlayerControlsActions
         {
             private @CorgiEngineInputActions m_Wrapper;
@@ -787,6 +808,7 @@ namespace MoreMountains.CorgiEngine
             public InputAction @SwitchWeapon => m_Wrapper.m_PlayerControls_SwitchWeapon;
             public InputAction @SwitchCharacter => m_Wrapper.m_PlayerControls_SwitchCharacter;
             public InputAction @TimeControl => m_Wrapper.m_PlayerControls_TimeControl;
+            public InputAction @SwitchPrimaryWeapon => m_Wrapper.m_PlayerControls_SwitchPrimaryWeapon;
             public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -856,6 +878,9 @@ namespace MoreMountains.CorgiEngine
                     @TimeControl.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTimeControl;
                     @TimeControl.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTimeControl;
                     @TimeControl.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnTimeControl;
+                    @SwitchPrimaryWeapon.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
+                    @SwitchPrimaryWeapon.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
+                    @SwitchPrimaryWeapon.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
                 }
                 m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
                 if (instance != null)
@@ -920,6 +945,9 @@ namespace MoreMountains.CorgiEngine
                     @TimeControl.started += instance.OnTimeControl;
                     @TimeControl.performed += instance.OnTimeControl;
                     @TimeControl.canceled += instance.OnTimeControl;
+                    @SwitchPrimaryWeapon.started += instance.OnSwitchPrimaryWeapon;
+                    @SwitchPrimaryWeapon.performed += instance.OnSwitchPrimaryWeapon;
+                    @SwitchPrimaryWeapon.canceled += instance.OnSwitchPrimaryWeapon;
                 }
             }
         }
@@ -964,6 +992,7 @@ namespace MoreMountains.CorgiEngine
             void OnSwitchWeapon(InputAction.CallbackContext context);
             void OnSwitchCharacter(InputAction.CallbackContext context);
             void OnTimeControl(InputAction.CallbackContext context);
+            void OnSwitchPrimaryWeapon(InputAction.CallbackContext context);
         }
     }
 }

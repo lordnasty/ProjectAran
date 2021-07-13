@@ -4,6 +4,7 @@ using MoreMountains.Tools;
 using MoreMountains.InventoryEngine;
 using System.Collections.Generic;
 
+
 namespace MoreMountains.CorgiEngine
 {
     /// <summary>
@@ -48,6 +49,8 @@ namespace MoreMountains.CorgiEngine
         /// the target handle weapon ability - if left empty, will pick the first one it finds
         [Tooltip("the target handle weapon ability - if left empty, will pick the first one it finds")]
         public CharacterHandleWeapon CharacterHandleWeapon;
+        [Tooltip("the target handle weapon ability - if left empty, will pick the first one it finds")]
+        public CharacterHandleSecondaryWeapon CharacterHandleSecondaryWeapon;
 
         [Header("Start")]
         /// a list of items and associated quantities to add to the main inventory
@@ -105,6 +108,11 @@ namespace MoreMountains.CorgiEngine
             if (CharacterHandleWeapon == null)
             {
                 CharacterHandleWeapon = _character?.FindAbility<CharacterHandleWeapon>();
+            }
+
+            if (CharacterHandleSecondaryWeapon == null)
+            {
+	            CharacterHandleSecondaryWeapon = _character?.FindAbility<CharacterHandleSecondaryWeapon>();
             }
             FillAvailableWeaponsLists ();
 		}
@@ -168,9 +176,14 @@ namespace MoreMountains.CorgiEngine
         /// </summary>
 		protected override void HandleInput()
 		{
-			if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			if (_inputManager.SwitchPrimaryWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
 			{
 				SwitchWeapon ();
+			}
+
+			if (_inputManager.SwitchWeaponButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			{
+				SwitchSecondaryWeapon();
 			}
 		}
 
@@ -196,6 +209,28 @@ namespace MoreMountains.CorgiEngine
 
 			_availableWeaponsIDs.Sort ();
 		}
+
+        protected virtual void FillAvailableSubweaponLists()
+        {
+	        _availableWeaponsIDs = new List<string> ();
+	        if ((CharacterHandleSecondaryWeapon == null) || (WeaponInventory == null))
+	        {
+		        return;
+	        }
+	        _availableWeapons = MainInventory.InventoryContains (ItemClasses.Weapon);
+	        foreach (int index in _availableWeapons)
+	        {
+		        _availableWeaponsIDs.Add (MainInventory.Content [index].ItemID);
+	        }
+	        if (!InventoryItem.IsNull(WeaponInventory.Content[0]))
+	        {
+		        _availableWeaponsIDs.Add (WeaponInventory.Content [0].ItemID);
+	        }
+
+	        _availableWeaponsIDs.Sort ();
+        }
+        
+        
 
         /// <summary>
         /// Determines the name of the next weapon
@@ -273,6 +308,41 @@ namespace MoreMountains.CorgiEngine
 				}
 			}
 		}
+        
+        /// <summary>
+        /// Equips a weapon specified in parameters
+        /// </summary>
+        /// <param name="weaponID"></param>
+        protected virtual void EquipSecondaryWeapon(string weaponID)
+        {
+	        if ((weaponID == _emptySlotWeaponName) && (CharacterHandleWeapon != null))
+	        {
+		        MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0);
+		        CharacterHandleSecondaryWeapon.ChangeWeapon(null, _emptySlotWeaponName, false);
+		        MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0);
+	        }
+
+	        if ((weaponID == _initialSlotWeaponName) && (CharacterHandleWeapon != null))
+	        {
+		        MMInventoryEvent.Trigger(MMInventoryEventType.UnEquipRequest, null, WeaponInventoryName, WeaponInventory.Content[0], 0, 0);
+		        CharacterHandleSecondaryWeapon.ChangeWeapon(CharacterHandleWeapon.InitialWeapon, _emptySlotWeaponName, false);
+		        MMInventoryEvent.Trigger(MMInventoryEventType.Redraw, null, WeaponInventory.name, null, 0, 0);
+		        return;
+	        }
+
+	        for (int i = 0; i < MainInventory.Content.Length ; i++)
+	        {
+		        if (InventoryItem.IsNull(MainInventory.Content[i]))
+		        {
+			        continue;
+		        }
+		        if (MainInventory.Content[i].ItemID == weaponID)
+		        {
+			        MMInventoryEvent.Trigger(MMInventoryEventType.EquipRequest, null, MainInventory.name, MainInventory.Content[i], 0, i);
+			        break;
+		        }
+	        }
+        }
 
         /// <summary>
         /// Switches to the next weapon in line
@@ -297,6 +367,30 @@ namespace MoreMountains.CorgiEngine
 			EquipWeapon (_nextWeaponID);
             PlayAbilityStartFeedbacks();
 		}
+        
+        /// <summary>
+        /// Switches to the next weapon in line
+        /// </summary>
+        protected virtual void SwitchSecondaryWeapon()
+        {
+	        // if there's no character handle weapon component, we can't switch weapon, we do nothing and exit
+	        if ((CharacterHandleSecondaryWeapon == null) || (WeaponInventory == null))
+	        {
+		        return;
+	        }
+
+	        FillAvailableWeaponsLists ();
+
+	        // if we only have 0 or 1 weapon, there's nothing to switch, we do nothing and exit
+	        if (_availableWeaponsIDs.Count <= 0)
+	        {
+		        return;
+	        }
+
+	        DetermineNextWeaponName ();
+	        EquipSecondaryWeapon (_nextWeaponID);
+	        PlayAbilityStartFeedbacks();
+        }
 
 		/// <summary>
 		/// Watches for InventoryLoaded events
