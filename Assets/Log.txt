@@ -1,5 +1,5 @@
-[7/13/2021 2:43:57 PM Log] Initialized
-[7/13/2021 2:43:57 PM Log] Device
+[7/14/2021 1:41:05 PM Log] Initialized
+[7/14/2021 1:41:05 PM Log] Device
     OS              Windows 10  (10.0.19043) 64bit(Windows)
     RAM             32.682 Gb
     Name            TIPHUS-PRIME
@@ -16,101 +16,5 @@ GPU
     Vendor          NVIDIA
     Memory          10.078 Gb
 
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive VRR scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive View Distance scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Transparency scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Sorting scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Shadowmap Resolution scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Shadow Quality scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Shadow Distance scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Shadow Cascade scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Resolution scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive MSAA scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Lut scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive LOD scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Framerate scaler.
-[7/13/2021 2:43:57 PM Log] [Adaptive Performance] [Indexer] Deactivated Adaptive Batching scaler.
-[7/13/2021 2:43:57 PM Log] Power Grip
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Bottleneck Unknown, ThermalTrend 0
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:02 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] [perf event] bottleneck: TargetFrameRate
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:03 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:04 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:05 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:06 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:07 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:08 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:09 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] 
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Performance level CPU=6/6 GPU=4/4 thermal warn=NoWarning(0) thermal level=0 mode=Automatic
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Average GPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Average CPU frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Average frametime = 0 ms (Current = 0 ms)
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Bottleneck TargetFrameRate, ThermalTrend 0
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] CPU Boost Mode False, GPU Boost Mode False
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] Cluster Info = Big Cores: 0 Medium Cores: 0 Little Cores: 0
-[7/13/2021 2:44:11 PM Log] [Adaptive Performance] FPS = Infinity
-[7/13/2021 2:44:12 PM Log] OnApplicationQuit
+[7/14/2021 1:41:05 PM Log] Power Grip
+[7/14/2021 1:41:20 PM Log] OnApplicationQuit

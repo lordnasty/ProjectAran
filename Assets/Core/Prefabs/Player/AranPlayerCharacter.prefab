@@ -14676,7 +14676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803023990748685971}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2633440199758772664}
@@ -19677,6 +19677,7 @@ GameObject:
   - component: {fileID: 143801700633172642}
   - component: {fileID: 4238367623718149658}
   - component: {fileID: 400492623478990727}
+  - component: {fileID: 8134794094762746741}
   m_Layer: 9
   m_Name: AranPlayerCharacter
   m_TagString: Player
@@ -19832,7 +19833,7 @@ MonoBehaviour:
     m_Bits: 268435456
   DetachmentMethod: 0
   SafeSetTransform: 0
-  AutomaticallySetPhysicsSettings: 0
+  AutomaticallySetPhysicsSettings: 1
   StandingOn: {fileID: 0}
   UpdateMode: 0
   NumberOfHorizontalRays: 4
@@ -19867,7 +19868,7 @@ MonoBehaviour:
   PerformAnimatorSanityChecks: 1
   CharacterModel: {fileID: 8839836935353675795}
   CameraTarget: {fileID: 1803023990748685971}
-  CameraTargetSpeed: 5
+  CameraTargetSpeed: 0.1
   AdditionalAbilityNodes: []
   FlipModelOnDirectionChange: 0
   ModelFlipValue: {x: -1, y: 1, z: 1}
@@ -19891,7 +19892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Top: 1
-  Bottom: 2
+  Bottom: 1
   Left: 1
   Right: 1
 --- !u!114 &2674814438524767542
@@ -19912,13 +19913,13 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 02000000
-  WalkSpeed: 5
+  WalkSpeed: 7
   MovementSpeedMultiplier: 1
   PushSpeedMultiplier: 1
   StateSpeedMultiplier: 1
   FlipCharacterToFaceDirection: 1
   ReadInput: 1
-  InstantAcceleration: 0
+  InstantAcceleration: 1
   InputThreshold: 0.1
   AirControl: 1
   AllowFlipInTheAir: 1
@@ -19993,8 +19994,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 3046793017110544165}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityName: 
-  AbilityPermitted: 0
+  AbilityName: Power Grip
+  AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
   WallClingingSlowFactor: 0.6
@@ -20015,7 +20016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 1676175535202474183}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityName: 
+  AbilityName: Grip Launcher
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
@@ -20181,7 +20182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 2501642249453839989}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityName: 
+  AbilityName: Speed Booster
   AbilityPermitted: 0
   BlockingMovementStates: 
   BlockingConditionStates: 0400000002000000
@@ -20189,8 +20190,8 @@ MonoBehaviour:
   DashForce: 30
   ResetForcesOnExit: 1
   Aim:
-    AimControl: 0
-    RotationMode: 2
+    AimControl: 1
+    RotationMode: 0
     MinimumAngle: -180
     MaximumAngle: 180
     CurrentAngle: 0
@@ -20198,8 +20199,8 @@ MonoBehaviour:
   FlipCharacterIfNeeded: 1
   AutoCorrectTrajectory: 1
   DashCooldown: 0.3
-  LimitedDashes: 0
-  SuccessiveDashAmount: 1
+  LimitedDashes: 1
+  SuccessiveDashAmount: 3
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
@@ -20217,15 +20218,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AbilityStartFeedbacks: {fileID: 2501642249453839989}
   AbilityStopFeedbacks: {fileID: 5187991911120547846}
-  AbilityName: 
+  AbilityName: Damage Booster
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  DashDistance: 6
+  DashDistance: 8
   DashForce: 50
-  ResetForcesOnExit: 0
+  ResetForcesOnExit: 1
   Aim:
-    AimControl: 2
+    AimControl: 1
     RotationMode: 0
     MinimumAngle: -180
     MaximumAngle: 180
@@ -20233,9 +20234,9 @@ MonoBehaviour:
   MinimumInputThreshold: 0.1
   FlipCharacterIfNeeded: 1
   AutoCorrectTrajectory: 1
-  DashCooldown: 0.5
-  LimitedDashes: 0
-  SuccessiveDashAmount: 1
+  DashCooldown: 0.3
+  LimitedDashes: 1
+  SuccessiveDashAmount: 5
   SuccessiveDashesLeft: 1
   SuccessiveDashResetMethod: 0
   SuccessiveDashResetDuration: 2
@@ -20258,7 +20259,8 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
-  InitialWeapon: {fileID: 0}
+  InitialWeapon: {fileID: 3046757699214114033, guid: c9165421b0f954d4f85ff584c76e9329,
+    type: 3}
   CanPickupWeapons: 1
   WeaponAttachment: {fileID: 2228794958593352521}
   ForceWeaponScaleResetOnEquip: 1
@@ -20416,6 +20418,18 @@ MonoBehaviour:
   AbilityPermitted: 1
   BlockingMovementStates: 
   BlockingConditionStates: 
+--- !u!114 &8134794094762746741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633440199758918902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16de222f797e4f14a97009d948c83888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2689386507821044998
 GameObject:
   m_ObjectHideFlags: 0
@@ -66934,6 +66948,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b575174974cb6f641962640d3d25fec0, type: 3}
+--- !u!137 &1707931728337436587 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
+    type: 3}
+  m_PrefabInstance: {fileID: 21596399378290855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3750068036975645452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5456582856578692181, guid: b575174974cb6f641962640d3d25fec0,
@@ -66949,12 +66969,6 @@ Animator:
 --- !u!4 &4987187935587038141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: b575174974cb6f641962640d3d25fec0,
-    type: 3}
-  m_PrefabInstance: {fileID: 21596399378290855}
-  m_PrefabAsset: {fileID: 0}
---- !u!137 &1707931728337436587 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7494144724354914548, guid: b575174974cb6f641962640d3d25fec0,
     type: 3}
   m_PrefabInstance: {fileID: 21596399378290855}
   m_PrefabAsset: {fileID: 0}

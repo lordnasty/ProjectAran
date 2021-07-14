@@ -61,7 +61,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 75
+  field of view: 85
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -74,7 +74,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -107,20 +107,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a86ebad071ac44351826f05ad27db3a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalLookDistance: 6
+  HorizontalLookDistance: 0
   CameraOffset: {x: 3, y: 2, z: 0}
   LookAheadTrigger: 0.1
-  ManualUpDownLookDistance: 3
-  ResetSpeed: 0.5
-  CameraSpeed: 0.3
-  MinimumZoom: 5
-  MaximumZoom: 10
-  ZoomSpeed: 0.4
+  ManualUpDownLookDistance: 5
+  ResetSpeed: 0.2
+  CameraSpeed: 0.5
+  MinimumZoom: 2
+  MaximumZoom: 5
+  ZoomSpeed: 0.3
   PixelPerfect: 0
   ReferenceVerticalResolution: 768
   ReferencePixelsPerUnit: 32
   EnableEffectsOnMobile: 0
-  InstantRepositionCameraOnRespawn: 0
+  InstantRepositionCameraOnRespawn: 1
   AssignCameraOnSpawn: 1
   Target: {fileID: 0}
   TargetController: {fileID: 0}
