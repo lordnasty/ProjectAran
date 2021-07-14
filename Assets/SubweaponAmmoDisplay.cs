@@ -20,10 +20,10 @@ public class SubweaponAmmoDisplay : MonoBehaviour
     
     void Start()
     {
-       // _weaponAmmo = SubweaponHandler.CurrentWeapon.GetComponent<WeaponAmmo>();
+       
         playerGO = GameObject.FindGameObjectWithTag("Player");
         AmmoTextComp = GetComponent<TextMeshProUGUI>();
-//        SubweaponHandler = playerGO.GetComponent<CharacterHandleSecondaryWeapon>();
+        SubweaponHandler = playerGO.GetComponent<CharacterHandleSecondaryWeapon>();
     }
 
     private void LateUpdate()
@@ -33,6 +33,8 @@ public class SubweaponAmmoDisplay : MonoBehaviour
             playerGO = GameObject.FindGameObjectWithTag("Player");
             SubweaponHandler = playerGO.GetComponent<CharacterHandleSecondaryWeapon>();
         }
+
+        
         if (SubweaponHandler)
         {
             if (SubweaponHandler.CurrentWeapon)
@@ -41,10 +43,15 @@ public class SubweaponAmmoDisplay : MonoBehaviour
                 
                 if (_weaponAmmo.AmmoID == DesiredAmmoID)
                 {
+                    AmmoTextComp.enabled = true;
                     if (SubweaponHandler.CurrentWeapon.MagazineBased)
                     {
                         AmmoTextComp.SetText(SubweaponHandler.CurrentWeapon.CurrentAmmoLoaded.ToString());
                     }
+                }
+                else
+                {
+                    AmmoTextComp.enabled = false;
                 }
                
             }
