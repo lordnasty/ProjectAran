@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4190964365544101731}
   - component: {fileID: 4190964365547953345}
   m_Layer: 8
-  m_Name: 4x1 Orange
+  m_Name: Elevator_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
     Delay: 0
   - PathElementPosition: {x: 0, y: -30, z: 0}
     Delay: 0
-  MovementSpeed: 1
-  AccelerationType: 0
+  MovementSpeed: 0.5
+  AccelerationType: 1
   Acceleration:
     serializedVersion: 2
     m_Curve:

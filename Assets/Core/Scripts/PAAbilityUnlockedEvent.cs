@@ -20,3 +20,21 @@ public struct PAAbilityUnlockedEvent
         MMEventManager.TriggerEvent(_event);
     }
 }
+
+public struct PAHealthUpgradePickupEvent
+{
+    public string AbilityName;
+
+    public PAHealthUpgradePickupEvent(string abilityName)
+    {
+        AbilityName = abilityName;
+    }
+
+    private static PAAbilityUnlockedEvent _event;
+
+    public static void Trigger(string newAbilityUnlockedName)
+    {
+        _event.AbilityName = newAbilityUnlockedName;
+        MMEventManager.TriggerEvent(_event);
+    }
+}

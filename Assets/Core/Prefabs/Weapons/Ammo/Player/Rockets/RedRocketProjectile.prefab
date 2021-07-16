@@ -115,7 +115,7 @@ MonoBehaviour:
   RandomSfx: []
   TestButton: 0
   TestStopButton: 0
-  PlayMethod: 0
+  PlayMethod: 1
   PoolSize: 10
   MinVolume: 0.5
   MaxVolume: 0.75
@@ -9950,6 +9950,7 @@ GameObject:
   - component: {fileID: 4786951282534356647}
   - component: {fileID: 7844704614253530794}
   - component: {fileID: 6767444817855302372}
+  - component: {fileID: 4676969403179613662}
   m_Layer: 0
   m_Name: RedRocketProjectile
   m_TagString: Untagged
@@ -14879,10 +14880,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 12608
+    m_Bits: 12609
   CollideOnlyLayerMask:
     serializedVersion: 2
-    m_Bits: 129
+    m_Bits: 128
   DamageCaused: 30
   DamageCausedKnockbackType: 2
   DamageCausedKnockbackDirection: 0
@@ -14946,7 +14947,40 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 2
+--- !u!114 &4676969403179613662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332430216749021660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9716d97790a0a49889284ee813194576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentHealth: 0
+  CurrentStatus: 0
+  TemporaryInvulnerable: 0
+  InitialHealth: 10
+  MaximumHealth: 10
+  Invulnerable: 0
+  DamageFeedbacks: {fileID: 0}
+  FlickerSpriteOnHit: 1
+  FlickerColor: {r: 1, g: 0.078431375, b: 0.078431375, a: 1}
+  ImmuneToKnockback: 0
+  DeathFeedbacks: {fileID: 5914864987334417111}
+  DestroyOnDeath: 1
+  DelayBeforeDestruction: 0
+  CollisionsOffOnDeath: 1
+  GravityOffOnDeath: 0
+  PointsWhenDestroyed: 0
+  VibrateOnDeath: 0
+  RespawnAtInitialLocation: 0
+  ApplyDeathForce: 1
+  DeathForce: {x: 0, y: 10}
+  ResetForcesOnDeath: 0
 --- !u!1 &8332756603850370546
 GameObject:
   m_ObjectHideFlags: 0

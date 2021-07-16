@@ -27,6 +27,11 @@ public class UnlockAbility : MonoBehaviour, MMEventListener<PAAbilityUnlockedEve
 
     private void Update()
     {
+        if (!AbilityUnlockCanvas)
+        {
+            AbilityUnlockCanvas = FindObjectOfType<ID_AbilityUnlockCanvas>();
+            AbilityUnlockCanvas.gameObject.SetActive(false);
+        }
         if (!Player)
         {
             Player = GameObject.FindGameObjectWithTag("Player");

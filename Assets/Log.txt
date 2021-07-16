@@ -1,5 +1,5 @@
-[7/14/2021 2:52:00 PM Log] Initialized
-[7/14/2021 2:52:00 PM Log] Device
+[7/16/2021 1:50:54 AM Log] Initialized
+[7/16/2021 1:50:54 AM Log] Device
     OS              Windows 10  (10.0.19043) 64bit(Windows)
     RAM             32.682 Gb
     Name            TIPHUS-PRIME
@@ -12,17 +12,9 @@ CPU
     Frequency       3800
 GPU
     Name            NVIDIA GeForce RTX 3080
-    Type            Direct3D11
+    Type            Vulkan
     Vendor          NVIDIA
     Memory          10.078 Gb
 
-[7/14/2021 2:52:01 PM Log] Power Grip
-[7/14/2021 2:52:05 PM Error] Coroutine couldn't be started because the the game object 'PickFeedback' is inactive!
-UnityEngine.MonoBehaviour:StartCoroutine (System.Collections.IEnumerator)
-MoreMountains.Feedbacks.MMFeedbacks:PlayFeedbacks () (at Assets/CorgiEngine/ThirdParty/MoreMountains/MMFeedbacks/MMFeedbacks/Core/MMFeedbacks.cs:219)
-MoreMountains.CorgiEngine.InventoryPickableItem:Effects () (at Assets/CorgiEngine/Common/Scripts/Items/InventoryPickableItem.cs:34)
-MoreMountains.CorgiEngine.InventoryPickableItem:PickSuccess () (at Assets/CorgiEngine/Common/Scripts/Items/InventoryPickableItem.cs:20)
-MoreMountains.InventoryEngine.ItemPicker:Pick (string) (at Assets/CorgiEngine/ThirdParty/MoreMountains/InventoryEngine/InventoryEngine/Scripts/Core/ItemPicker.cs:112)
-MoreMountains.InventoryEngine.ItemPicker:OnTriggerEnter2D (UnityEngine.Collider2D) (at Assets/CorgiEngine/ThirdParty/MoreMountains/InventoryEngine/InventoryEngine/Scripts/Core/ItemPicker.cs:71)
-
-[7/14/2021 2:52:46 PM Log] OnApplicationQuit
+[7/16/2021 1:50:54 AM Log] Power Grip
+[7/16/2021 1:51:19 AM Log] OnApplicationQuit
