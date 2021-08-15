@@ -607,7 +607,7 @@ namespace MoreMountains.Feedbacks
                 {
                     EditorApplication.delayCall += () =>
                     {
-                        DestroyImmediate(feedback);
+                      //  DestroyImmediate(feedback);
                     };                    
                 }
             }

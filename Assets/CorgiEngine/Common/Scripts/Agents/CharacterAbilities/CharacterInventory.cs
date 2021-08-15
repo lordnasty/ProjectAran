@@ -185,6 +185,11 @@ namespace MoreMountains.CorgiEngine
 			{
 				SwitchSecondaryWeapon();
 			}
+
+			if (_inputManager.JournalButton.State.CurrentState == MMInput.ButtonStates.ButtonDown)
+			{
+				
+			}
 		}
 
         /// <summary>

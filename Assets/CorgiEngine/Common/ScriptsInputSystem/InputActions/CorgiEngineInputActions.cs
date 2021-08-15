@@ -187,6 +187,22 @@ namespace MoreMountains.CorgiEngine
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimDiagonal"",
+                    ""type"": ""Button"",
+                    ""id"": ""58c2d4f1-8784-4061-9f52-2dd196bbd37e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Journal"",
+                    ""type"": ""Button"",
+                    ""id"": ""f96eed8a-3d36-4305-a942-f81b3b589dc0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -362,6 +378,17 @@ namespace MoreMountains.CorgiEngine
                     ""interactions"": ""Press(behavior=2)"",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
+                    ""action"": ""SecondaryShoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6638c6e-adc9-447f-9758-d6f6676e0927"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""SecondaryShoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -662,6 +689,50 @@ namespace MoreMountains.CorgiEngine
                     ""action"": ""SwitchPrimaryWeapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2996d66e-24d4-4b73-ade4-dc8e3eb2c230"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""AimDiagonal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74f36c1c-e59e-4581-b678-de225e229414"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58e80f1d-5368-42bf-9994-d65f46e683dd"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6557cf57-9946-444d-ba4c-73b1844da449"",
+                    ""path"": ""<DualShockGamepad>/touchpadButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PlayStation Controller"",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -684,6 +755,28 @@ namespace MoreMountains.CorgiEngine
             ""devices"": [
                 {
                     ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Xbox Controller"",
+            ""bindingGroup"": ""Xbox Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PlayStation Controller"",
+            ""bindingGroup"": ""PlayStation Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<DualShockGamepad>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -714,6 +807,8 @@ namespace MoreMountains.CorgiEngine
             m_PlayerControls_SwitchCharacter = m_PlayerControls.FindAction("SwitchCharacter", throwIfNotFound: true);
             m_PlayerControls_TimeControl = m_PlayerControls.FindAction("TimeControl", throwIfNotFound: true);
             m_PlayerControls_SwitchPrimaryWeapon = m_PlayerControls.FindAction("SwitchPrimaryWeapon", throwIfNotFound: true);
+            m_PlayerControls_AimDiagonal = m_PlayerControls.FindAction("AimDiagonal", throwIfNotFound: true);
+            m_PlayerControls_Journal = m_PlayerControls.FindAction("Journal", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -784,6 +879,8 @@ namespace MoreMountains.CorgiEngine
         private readonly InputAction m_PlayerControls_SwitchCharacter;
         private readonly InputAction m_PlayerControls_TimeControl;
         private readonly InputAction m_PlayerControls_SwitchPrimaryWeapon;
+        private readonly InputAction m_PlayerControls_AimDiagonal;
+        private readonly InputAction m_PlayerControls_Journal;
         public struct PlayerControlsActions
         {
             private @CorgiEngineInputActions m_Wrapper;
@@ -809,6 +906,8 @@ namespace MoreMountains.CorgiEngine
             public InputAction @SwitchCharacter => m_Wrapper.m_PlayerControls_SwitchCharacter;
             public InputAction @TimeControl => m_Wrapper.m_PlayerControls_TimeControl;
             public InputAction @SwitchPrimaryWeapon => m_Wrapper.m_PlayerControls_SwitchPrimaryWeapon;
+            public InputAction @AimDiagonal => m_Wrapper.m_PlayerControls_AimDiagonal;
+            public InputAction @Journal => m_Wrapper.m_PlayerControls_Journal;
             public InputActionMap Get() { return m_Wrapper.m_PlayerControls; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -881,6 +980,12 @@ namespace MoreMountains.CorgiEngine
                     @SwitchPrimaryWeapon.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
                     @SwitchPrimaryWeapon.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
                     @SwitchPrimaryWeapon.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnSwitchPrimaryWeapon;
+                    @AimDiagonal.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnAimDiagonal;
+                    @AimDiagonal.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnAimDiagonal;
+                    @AimDiagonal.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnAimDiagonal;
+                    @Journal.started -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJournal;
+                    @Journal.performed -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJournal;
+                    @Journal.canceled -= m_Wrapper.m_PlayerControlsActionsCallbackInterface.OnJournal;
                 }
                 m_Wrapper.m_PlayerControlsActionsCallbackInterface = instance;
                 if (instance != null)
@@ -948,6 +1053,12 @@ namespace MoreMountains.CorgiEngine
                     @SwitchPrimaryWeapon.started += instance.OnSwitchPrimaryWeapon;
                     @SwitchPrimaryWeapon.performed += instance.OnSwitchPrimaryWeapon;
                     @SwitchPrimaryWeapon.canceled += instance.OnSwitchPrimaryWeapon;
+                    @AimDiagonal.started += instance.OnAimDiagonal;
+                    @AimDiagonal.performed += instance.OnAimDiagonal;
+                    @AimDiagonal.canceled += instance.OnAimDiagonal;
+                    @Journal.started += instance.OnJournal;
+                    @Journal.performed += instance.OnJournal;
+                    @Journal.canceled += instance.OnJournal;
                 }
             }
         }
@@ -968,6 +1079,24 @@ namespace MoreMountains.CorgiEngine
             {
                 if (m_GamepadSchemeIndex == -1) m_GamepadSchemeIndex = asset.FindControlSchemeIndex("Gamepad");
                 return asset.controlSchemes[m_GamepadSchemeIndex];
+            }
+        }
+        private int m_XboxControllerSchemeIndex = -1;
+        public InputControlScheme XboxControllerScheme
+        {
+            get
+            {
+                if (m_XboxControllerSchemeIndex == -1) m_XboxControllerSchemeIndex = asset.FindControlSchemeIndex("Xbox Controller");
+                return asset.controlSchemes[m_XboxControllerSchemeIndex];
+            }
+        }
+        private int m_PlayStationControllerSchemeIndex = -1;
+        public InputControlScheme PlayStationControllerScheme
+        {
+            get
+            {
+                if (m_PlayStationControllerSchemeIndex == -1) m_PlayStationControllerSchemeIndex = asset.FindControlSchemeIndex("PlayStation Controller");
+                return asset.controlSchemes[m_PlayStationControllerSchemeIndex];
             }
         }
         public interface IPlayerControlsActions
@@ -993,6 +1122,8 @@ namespace MoreMountains.CorgiEngine
             void OnSwitchCharacter(InputAction.CallbackContext context);
             void OnTimeControl(InputAction.CallbackContext context);
             void OnSwitchPrimaryWeapon(InputAction.CallbackContext context);
+            void OnAimDiagonal(InputAction.CallbackContext context);
+            void OnJournal(InputAction.CallbackContext context);
         }
     }
 }

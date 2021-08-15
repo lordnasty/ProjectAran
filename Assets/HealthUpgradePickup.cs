@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.CorgiEngine;
+using MoreMountains.Feedbacks;
 using MoreMountains.Tools;
 using UnityEngine;
 
 public class HealthUpgradePickup : MonoBehaviour
 {
     private Character playerCharacter;
+  
 
     private ID_HealthUpgradeCanvas _healthUpgradeCanvas;
     // Start is called before the first frame update
@@ -15,6 +17,7 @@ public class HealthUpgradePickup : MonoBehaviour
     {
         _healthUpgradeCanvas = FindObjectOfType<ID_HealthUpgradeCanvas>();
         _healthUpgradeCanvas.gameObject.SetActive(false);
+   
     }
 
     private void Update()

@@ -124,7 +124,9 @@ namespace MoreMountains.CorgiEngine
         public MMInput.IMButton SwitchCharacterButton { get; protected set; }
         /// the switch weapon button
         public MMInput.IMButton SwitchWeaponButton { get; protected set; }
+        public MMInput.IMButton AimDiagonalButton { get; protected set; }
         public MMInput.IMButton SwitchPrimaryWeaponButton { get; protected set; }
+        public MMInput.IMButton JournalButton { get; protected set; }
         /// the time control button
         public MMInput.IMButton TimeControlButton { get; protected set; }
         /// the shoot axis, used as a button (non analogic)
@@ -225,6 +227,8 @@ namespace MoreMountains.CorgiEngine
             ButtonList.Add(TimeControlButton = new MMInput.IMButton(PlayerID, "TimeControl", TimeControlButtonDown, TimeControlButtonPressed, TimeControlButtonUp));
             ButtonList.Add(GrabButton = new MMInput.IMButton(PlayerID, "Grab", GrabButtonDown, GrabButtonPressed, GrabButtonUp));
             ButtonList.Add(ThrowButton = new MMInput.IMButton(PlayerID, "Throw", ThrowButtonDown, ThrowButtonPressed, ThrowButtonUp));
+            ButtonList.Add(AimDiagonalButton = new MMInput.IMButton(PlayerID,"AimDiagonal",AimDiagonalButtonDown,AimDiagonalButtonPressed,AimDiagonalButtonUp));
+            ButtonList.Add(JournalButton = new MMInput.IMButton(PlayerID, "Journal",JournalButtonDown,JournalButtonPressed,JournalButtonUp));
         }
 
 		/// <summary>
@@ -529,6 +533,13 @@ namespace MoreMountains.CorgiEngine
         public virtual void SwitchPrimaryWeaponButtonDown()  { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
         public virtual void SwitchPrimaryWeaponButtonPressed()     { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }
         public virtual void SwitchPrimaryWeaponButtonUp()          { SwitchWeaponButton.State.ChangeState(MMInput.ButtonStates.ButtonUp); }
+        
+        public virtual void AimDiagonalButtonDown() { AimDiagonalButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);}
+        public virtual void AimDiagonalButtonPressed() { AimDiagonalButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);}
+        public virtual void AimDiagonalButtonUp() { AimDiagonalButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);}
+        public virtual void JournalButtonDown() { JournalButton.State.ChangeState(MMInput.ButtonStates.ButtonDown);}
+        public virtual void JournalButtonPressed() { JournalButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed);}
+        public virtual void JournalButtonUp() { JournalButton.State.ChangeState(MMInput.ButtonStates.ButtonUp);}
 
         public virtual void SwitchCharacterButtonDown()     { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonDown); }
         public virtual void SwitchCharacterButtonPressed()  { SwitchCharacterButton.State.ChangeState(MMInput.ButtonStates.ButtonPressed); }

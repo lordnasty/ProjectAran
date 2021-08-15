@@ -57,6 +57,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -222,19 +223,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0514d297deadac74fb15a7b7326ff0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AimControl: 2
-  RotationMode: 0
+  AimControl: 1
+  RotationMode: 2
   WeaponRotationSpeed: 0
   MinimumAngle: -180
   MaximumAngle: 180
   IgnoreSlopeRotation: 0
-  Reticle: {fileID: 1000010525066036, guid: fdff91f9c641e4bc4ae800f161c07e1f, type: 3}
-  DisplayReticle: 1
-  ReticleDistance: 4
+  Reticle: {fileID: 0}
+  DisplayReticle: 0
+  ReticleDistance: 5
   ReticleAtMousePosition: 0
-  RotateReticle: 1
+  RotateReticle: 0
   ReplaceMousePointer: 0
-  DisableReticleOnDeath: 1
+  DisableReticleOnDeath: 0
 --- !u!114 &-8364402708214674430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,10 +250,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RaycastOriginOffset: {x: 0, y: 0, z: 0}
   LaserOriginOffset: {x: 0, y: 0, z: 0}
-  LaserMaxDistance: 35
+  LaserMaxDistance: 15
   LaserCollisionMask:
     serializedVersion: 2
-    m_Bits: 395520
+    m_Bits: 403712
   LaserWidth: {x: 0.05, y: 0.05}
   LaserMaterial: {fileID: 2100000, guid: e29eff41cd45acf4481bdc8f4b45f138, type: 2}
 --- !u!1 &6786722202267137764

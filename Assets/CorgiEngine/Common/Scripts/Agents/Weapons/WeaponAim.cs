@@ -191,7 +191,7 @@ namespace MoreMountains.CorgiEngine
 			{
 				return;
 			}
-
+			print(_currentAim);
 			switch (AimControl)
 			{
 				case AimControls.Off:
